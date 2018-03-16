@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ST_HOME.master.cs" Inherits="ST_HOME" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>S P M</title>
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/ST_HOME_MASTER.css" rel="stylesheet" />
+    <script type = "text/javascript" >
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()",5);
+        window.onunload=function(){null};
+    </script>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand"><span>
+                            <img alt="Logo" src="images/education-chart.png" height="35" /></span>Student Progress Manager</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="ST_HOME_INDEX.aspx"><span class="glyphicon glyphicon-user"></span>HOME</a></li>
+                            <li><a href="#" onclick="$('#pwdModal').modal({'backdrop': 'static'});"><span class="glyphicon glyphicon-pencil"></span>RESET PASSWORD</a></li>
+                            <li><a href="Splash_logut.aspx"><span class="glyphicon glyphicon-log-out"></span>LOGOUT</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div>
+                <div class="container">
+
+                    <div class="Label1">
+                        <asp:Label ID="Label2" runat="server" Text="WELCOME"></asp:Label>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
+
+                    </div>
+                    <div class="c">
+
+                        <asp:ImageButton CssClass="btn Ib1" AlternateText="ATTENDANCE" ID="ImageButton1" runat="server" ImageUrl="~/images/calendar.png" ToolTip="ATTENDANCE" OnClick="ImageButton1_Click" />
+                        
+                        <asp:ImageButton CssClass="btn " ID="ImageButton2" runat="server" ImageUrl="~/images/books-stack-of-three.png" ToolTip="NOTES" OnClick="ImageButton2_Click" />
+
+                        <asp:ImageButton CssClass="btn Ib2" ID="ImageButton3" OnClick="ImageButton3_Click" runat="server" ImageUrl="~/images/edit-document.png" ToolTip="INTERNAL MARKS" />
+
+                    </div>
+                </div>
+                <hr style="height: 5px; border: double; color: red; background-color: black;" />
+
+
+
+            </div>
+
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+        <div tabindex="-1" class="modal fade" id="pwdModal" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                        <h1 class="text-center">RESET PASSWORD</h1>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="text-center">
+
+                                        <p>Reset Here !</p>
+                                        <div class="panel-body">
+                                            <fieldset>
+                                                <div class="form-group">
+
+                                                    <asp:TextBox ID="TextBox1" class="form-control input-lg" runat="server" placeholder="OLD Password"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="b1" runat="server" ForeColor="DarkRed" ErrorMessage="Oops! Empty is not good !" ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
+
+                                                    <asp:TextBox ID="TextBox2" CssClass="form-control input-lg" runat="server" placeholder="NEW Password"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Oops! Mistake, Empty is not good !" ValidationGroup="b1" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
+                                                    <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Both Should be Same!" ControlToCompare="TextBox3" ControlToValidate="TextBox2" ValidationGroup="b1" Display="Dynamic"></asp:CompareValidator>
+
+                                                    <asp:TextBox ID="TextBox3" CssClass="form-control input-lg" runat="server" placeholder="CONFIRM Password" ControlToValidate="TextBox3"></asp:TextBox>
+
+                                                    
+
+                                                </div>
+
+                                                <asp:Button ID="Button2" runat="server" ValidationGroup="b1"  OnClick="Button2_Click"  class="btn btn-lg btn-primary btn-block" Text="Reset It" />
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-md-12">
+                            <asp:Button ID="Button3" CssClass="btn btn-success" Text="Cancel" runat="server" data-dismiss="modal" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

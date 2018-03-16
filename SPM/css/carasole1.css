@@ -1,0 +1,13 @@
+﻿body{
+    background:linear-gradient(red,navy);
+}
+.center {
+    text-align:center;
+}
+
+.foo{
+text-align:center;
+margin-top:3px;
+font-size:20px;
+  }
+

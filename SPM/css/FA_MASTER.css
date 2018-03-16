@@ -1,0 +1,15 @@
+﻿body {
+}
+
+.Label1{
+    margin-top: 65px;
+    text-decoration-style: solid;
+    text-transform: uppercase;
+    color: white;
+    text-size-adjust: 100%;
+    background: border-box;
+    border-color: blue;
+    border-style: solid;
+    background-color: black;
+    text-align: center;
+}

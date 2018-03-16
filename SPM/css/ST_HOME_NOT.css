@@ -1,0 +1,18 @@
+﻿body {
+}
+
+.main {
+    background: linear-gradient(red,black);
+    text-align: center;
+    width: 1080px;
+    height: 350px;
+    margin-top: 5%;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nottable {
+    width: 1080px;
+    text-align: center;
+}
